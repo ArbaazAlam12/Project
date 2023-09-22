@@ -46,7 +46,7 @@ public class SaveTest {
 
 
     @Test
-    public void Save_Manager_Test()throws Exception {
+    public void Update_Manager_Test()throws Exception {
         when(managerService.update(any(ManagerEntity.class))).thenReturn(Manager1);
         mockMvc.perform(MockMvcRequestBuilders
                         .post("/manager/save")

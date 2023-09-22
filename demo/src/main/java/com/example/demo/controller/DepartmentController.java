@@ -19,7 +19,8 @@ public class DepartmentController {
     }
 
     /**
-     *
+     * This get method helps to get all the department from department table
+     * It returns the all departments from department table
      * @return
      */
     @GetMapping(ApiConstant.GET_ALL_DEPARTMENT)
@@ -34,7 +35,8 @@ public class DepartmentController {
     }
 
     /**
-     *
+     *This post method helps to save the department to department table giving uniqye id
+     * It returns the save department from department table
      * @param departmentEntity
      * @return
      */
@@ -48,7 +50,7 @@ public class DepartmentController {
     }
 
     /**
-     *
+     *This delete method helps to delete the department from department table, and it takes id as parameter
      * @param id
      * @return
      */
@@ -62,7 +64,7 @@ public class DepartmentController {
     }
 
     /**
-     *
+     *This get method retrieve department by the id given as parameter
      * @param id
      * @return
      */
@@ -76,7 +78,8 @@ public class DepartmentController {
     }
 
     /**
-     *
+     *This method update the department provided by the api, updates based on body id of json
+     * It returns the update department
      * @param departmentEntity
      * @return
      */

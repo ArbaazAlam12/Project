@@ -47,4 +47,8 @@ public class EmployeeEntity {
         this.department = department;
         this.manager = manager;
     }
+
+    public EmployeeEntity() {
+
+    }
 }

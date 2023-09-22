@@ -36,7 +36,7 @@ public class EmployeeService {
     }
 
     /**
-     *
+     * This method helps to save department
      * @param employeeEntity
      * @return
      */
@@ -45,7 +45,7 @@ public class EmployeeService {
     }
 
     /**
-     *
+     * When delete employee is set to be not active, data is not deleted
      * @param id
      */
     public EmployeeEntity delete(Long id){
@@ -61,7 +61,7 @@ public class EmployeeService {
     }
 
     /**
-     *
+     * This method helps to get all the employees
      * @return
      */
     public List<EmployeeEntity> findAll(){
@@ -74,7 +74,8 @@ public class EmployeeService {
     }
 
     /**
-     *
+     * It helps to find the find employee by id, customer mapper is used to convert entity to dto
+     * and gets the employee
      * @param id
      * @return
      */
@@ -84,7 +85,7 @@ public class EmployeeService {
    }
 
     /**
-     *
+     * It helps to update the employee entity
      * @param employeeEntity
      * @return
      */
@@ -93,7 +94,9 @@ public class EmployeeService {
    }
 
     /**
-     *
+     * It helps to show employee by manager id which is foreign key employee table
+     * and join table based on primary key from manager to
+     *  foreign key from employee
      * @param managerId
      * @return
      */
@@ -109,10 +112,11 @@ public class EmployeeService {
     }
 
     /**
-     *
+     * It takes parameter of employee ids and manager id and changes employee ids
+     * to manager id and return the data, transaction is used, so it can be rollback
      * @param employeeId
      * @param managerId
-     * @return
+     * @return employee with new manager id
      */
     @Transactional
     public List<EmployeeEntity> assignEmployeeToManagerId(List<Long> employeeId, Long managerId) {
@@ -130,7 +134,7 @@ public class EmployeeService {
     }
 
     /**
-     *
+     * It helps to changes the status of employee to active which was deleted
      * @param id
      */
     public EmployeeEntity changeStatusActive(Long id){

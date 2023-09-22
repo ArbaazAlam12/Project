@@ -20,7 +20,8 @@ public class ManagerController {
     }
 
     /**
-     *
+     * This get method helps to get all the manager from manager table
+     * It returns the all managers from manager table
      * @return
      */
     @GetMapping(ApiConstant.GET_ALL_MANAGER)
@@ -29,7 +30,8 @@ public class ManagerController {
     }
 
     /**
-     *
+     *This delete method helps to delete the manager from manager table
+     * It doesn't delete the data but sets it to not Active
      * @param id
      * @return
      */
@@ -43,7 +45,8 @@ public class ManagerController {
     }
 
     /**
-     *
+     *This post method helps to save the manager to manager table giving unique id
+     * It returns the save manager from manager table
      * @param managerEntity
      * @return
      */
@@ -53,7 +56,7 @@ public class ManagerController {
     }
 
     /**
-     *
+     *This get method retrieve manager by the id given as parameter
      * @param id
      * @return
      */
@@ -68,7 +71,8 @@ public class ManagerController {
     }
 
     /**
-     *
+     *This method update the manager provided by the api, updates based on body id of json
+     * It returns the update manager
      * @param managerEntity
      * @return
      */
@@ -83,7 +87,7 @@ public class ManagerController {
     }
 
     /**
-     *
+     *This method get all the manager under any department
      * @return
      */
     @GetMapping(ApiConstant.MANAGER_IN_DEPARTMENT)
@@ -92,9 +96,9 @@ public class ManagerController {
     }
 
     /**
-     *
+     * This method gets all the manager based on department id
      * @param departmentId
-     * @return
+     * @return list of manager entity
      */
     @GetMapping(ApiConstant.MANAGER_IN_DEPARTMENT_BY_ID)
     public ResponseEntity<List<ManagerEntity>> getManagersInDepartmentById(@PathVariable Long departmentId) {
@@ -107,7 +111,7 @@ public class ManagerController {
     }
 
     /**
-     *
+     *  This method changes the status of manager from not active to active
      * @param id
      * @return
      */

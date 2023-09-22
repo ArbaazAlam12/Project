@@ -52,8 +52,8 @@ public class UpdateTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("arbaaz"));
     }
-    @Test
 
+    @Test
     public void update_Manager_Test_Error()throws Exception {
         when(managerService.update(any(ManagerEntity.class))).thenThrow(new RuntimeException("Error updating"));
         mockMvc.perform(MockMvcRequestBuilders

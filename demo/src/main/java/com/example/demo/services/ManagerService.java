@@ -31,17 +31,17 @@ public class ManagerService {
     }
 
     /**
-     *
+     * It helps to save the manager
      * @param managerEntity
-     * @return
+     * @return manager from manager table
      */
     public ManagerEntity save(ManagerEntity managerEntity){
         return managerRepository.save(managerEntity);
     }
 
     /**
-     *
-     * @param id
+     * When delete manager is set to be not active, data is not deleted
+     * @param id manager
      */
     public ManagerEntity delete(Long id){
         Optional<ManagerEntity> optionalManager = managerRepository.findById(id);
@@ -56,16 +56,16 @@ public class ManagerService {
     }
 
     /**
-     *
+     * It helps to update the manager entity
      * @param managerEntity
-     * @return
+     * @return manager updated
      */
     public ManagerEntity update(ManagerEntity managerEntity){
         return managerRepository.save(managerEntity);
     }
 
     /**
-     *
+     * This method helps to get all the managers but only those who are not deleted
      * @return
      */
     public List<ManagerEntity> FindAll(){
@@ -78,9 +78,10 @@ public class ManagerService {
     }
 
     /**
-     *
+     * It helps to find the find manager by id, customer mapper is used to convert entity to dto
+     * and gets the manager
      * @param id
-     * @return
+     * @return manager data
      */
     public ManagerDTO findById(Long id){
         ManagerDTO managerDTO = CustomerMapperManager.convertToManagerDTO(managerRepository.findById(id).get());
@@ -88,8 +89,9 @@ public class ManagerService {
     }
 
     /**
-     *
-     * @return
+     * It helps to show all manager and join table based on primary key from department to
+     *  foreign key from manager
+     * @return list of manager
      */
     public List<ManagerEntity> findManagersInDepartments() {
         JPAQuery<ManagerEntity> query = new JPAQuery<>(entityManager);
@@ -104,7 +106,9 @@ public class ManagerService {
     }
 
     /**
-     *
+     * It helps to show manager by department id which is foreign key manager table
+     * and join table based on primary key from department to
+     *  foreign key from manager
      * @param departmentId
      * @return
      */
@@ -122,7 +126,7 @@ public class ManagerService {
     }
 
     /**
-     *
+     * It helps to change status of manager to active
      * @param id
      */
     public ManagerEntity changeStatusActive(Long id){
@@ -136,22 +140,4 @@ public class ManagerService {
             throw new IllegalArgumentException("Employee with ID " + id + " not found");
         }
     }
-
-//    public ManagerEntity changeStatusActive(Long id){
-//        Optional<ManagerEntity> optionalManager = managerRepository.findById(id);
-//        if (optionalManager.isPresent()) {
-//            ManagerEntity manager = optionalManager.get();
-//            if (manager.getStatus()==VariableConstant.Active) {
-//                manager.setStatus(VariableConstant.Not_Active);
-//                managerRepository.save(manager);
-//            }
-//            else {
-//                manager.setStatus(VariableConstant.Active);
-//                managerRepository.save(manager);
-//            }
-//            return manager;
-//        } else {
-//            throw new IllegalArgumentException("Employee with ID " + id + " not found");
-//        }
-//    }
 }

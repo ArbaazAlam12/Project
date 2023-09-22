@@ -20,7 +20,8 @@ public class EmployeeController {
     }
 
     /**
-     *
+     *This post method helps to save the employee to employee table giving unique id
+     * It returns the save employee from employee table
      * @param employeeEntity
      * @return
      */
@@ -34,7 +35,8 @@ public class EmployeeController {
     }
 
     /**
-     *
+     * This get method helps to get all the employee from employee table
+     * It returns the all employees from employee table
      * @return
      */
     @GetMapping(ApiConstant.GET_ALL_EMPLOYEES)
@@ -48,7 +50,7 @@ public class EmployeeController {
     }
 
     /**
-     *
+     * This method helps to get employee by employee id
      * @param id
      * @return
      */
@@ -63,7 +65,8 @@ public class EmployeeController {
     }
 
     /**
-     *
+     *This method update the employee provided by the api, updates based on body id of json
+     * It returns the update employee
      * @param employeeEntity
      * @return
      */
@@ -78,7 +81,8 @@ public class EmployeeController {
     }
 
     /**
-     *
+     *This delete method helps to delete the employee from employee table
+     * It doesn't delete the data but sets it to not Active
      * @param id
      * @return
      */
@@ -93,7 +97,7 @@ public class EmployeeController {
     }
 
     /**
-     *
+     *This get method retrieve employee by the id given as parameter
      * @param managerId
      * @return
      */
@@ -107,7 +111,7 @@ public class EmployeeController {
     }
 
     /**
-     *
+     * This method assign list of employee to new manager
      * @param managerId
      * @param requestBody
      * @return
@@ -125,7 +129,7 @@ public class EmployeeController {
     }
 
     /**
-     *
+     * This method changes the status of manager from not active to active
      * @param id
      * @return
      */
